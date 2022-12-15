@@ -190,13 +190,13 @@ public class MergeSortUtils
     /*
      * mergeAll method for Task 1.5
      */
-    public static int[] mergeAll(int[][] arrays) {
+    public static int[] mergeAll(int[][] arrays) {              // mergesort a number of arrays ( every array has the same length )
 
         int numberOfArrays = arrays.length;
         int arrayLength = arrays[0].length;
         int[] all = new int[numberOfArrays * arrayLength];
-        int[] indices = new int[numberOfArrays];                    // when index==arrays[0].length,  arrays[0] is finished
-
+        int[] indices = new int[numberOfArrays];                    // 为每个数组创建一个 index下标 (从0往上走到array.length)
+                                                                    // 当index==arrayslength时, 表示该数组 已经完成了 不参与后续的比较 (element已经全部被复制到 新数组了)
         for (int i=0; i< all.length; i++){
 
             for (int j=0; j<numberOfArrays; j++){
